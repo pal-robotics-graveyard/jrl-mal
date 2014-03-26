@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>jrl-mal</name>
+  <version>0.1.0</version>
+  <description>The jrl-mal package</description>
+
+  <maintainer email="hilario@todo.todo">hilario</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>sot_cmake</build_depend>
+  <build_depend>jrl-mathtools</build_depend>
+
+</package>

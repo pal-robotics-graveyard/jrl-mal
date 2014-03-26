@@ -15,18 +15,22 @@
 #
 
 # Requires at least CMake 2.6 to configure the package.
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 
-INCLUDE(cmake/base.cmake)
-INCLUDE(cmake/boost.cmake)
-INCLUDE(cmake/lapack.cmake)
-INCLUDE(cmake/cpack.cmake)
+find_package(catkin REQUIRED COMPONENTS sot_cmake jrl-mathtools)
+
+INCLUDE(${SOT_CMAKE_DIR}/base.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/boost.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/lapack.cmake)
+INCLUDE(${SOT_CMAKE_DIR}/cpack.cmake)
 
 SET(PROJECT_NAME jrl-mal)
 SET(PROJECT_DESCRIPTION "JRL matrix abstract layer")
 SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-mal")
 
 SETUP_PROJECT()
+
+catkin_package(INCLUDE_DIRS include)
 
 # Search for dependencies.
 SEARCH_FOR_BOOST()
@@ -90,8 +94,10 @@ ENDIF(NOT ${SMALLMATRIXLIB_FOUND})
 CONFIG_FILES(include/jrl/mal/configmal.hh)
 
 SET(${PROJECT_NAME}_HEADERS
-  ${CMAKE_BINARY_DIR}/include/jrl/mal/config.hh
-  ${CMAKE_BINARY_DIR}/include/jrl/mal/configmal.hh
+  #${${PROJECT_NAME}_BINARY_DIR}/include/jrl/mal/config.hh
+  #${${PROJECT_NAME}_BINARY_DIR}/include/jrl/mal/configmal.hh
+  ${CMAKE_CURRENT_BINARY_DIR}/include/jrl/mal/config.hh
+  ${CMAKE_CURRENT_BINARY_DIR}/include/jrl/mal/configmal.hh
   include/jrl/mal/matrixabstractlayer.hh
   include/jrl/mal/matrixabstractlayercheck.hh
   include/jrl/mal/matrixabstractlayerboost.hh
@@ -114,7 +120,7 @@ SET(${PROJECT_NAME}_HEADERS
   include/jrl/mal/boostvector.hh
 )
 
-ADD_SUBDIRECTORY(tests)
+#ADD_SUBDIRECTORY(tests)
 
 SETUP_PROJECT_FINALIZE()
 SETUP_PROJECT_CPACK()
