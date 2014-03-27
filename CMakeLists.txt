@@ -30,7 +30,12 @@ SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-mal")
 
 SETUP_PROJECT()
 
-catkin_package(INCLUDE_DIRS include)
+catkin_package(
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS jrl-mathtools
+)
+
+include_directories(${catkin_INCLUDE_DIRS})
 
 # Search for dependencies.
 SEARCH_FOR_BOOST()
