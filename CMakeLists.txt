@@ -99,8 +99,8 @@ CONFIG_FILES(include/jrl/mal/configmal.hh)
 SET(${PROJECT_NAME}_HEADERS
   #${${PROJECT_NAME}_BINARY_DIR}/include/jrl/mal/config.hh
   #${${PROJECT_NAME}_BINARY_DIR}/include/jrl/mal/configmal.hh
-  ${CMAKE_CURRENT_BINARY_DIR}/include/jrl/mal/config.hh
-  ${CMAKE_CURRENT_BINARY_DIR}/include/jrl/mal/configmal.hh
+  ${CATKIN_DEVEL_PREFIX}/include/jrl/mal/config.hh
+  ${CATKIN_DEVEL_PREFIX}/include/jrl/mal/configmal.hh
   include/jrl/mal/matrixabstractlayer.hh
   include/jrl/mal/matrixabstractlayercheck.hh
   include/jrl/mal/matrixabstractlayerboost.hh
