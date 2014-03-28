@@ -30,16 +30,18 @@ SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-mal")
 
 SETUP_PROJECT()
 
+# Search for dependencies.
+SEARCH_FOR_BOOST()
+SEARCH_FOR_LAPACK()
+
 catkin_package(
   INCLUDE_DIRS include
   CATKIN_DEPENDS jrl-mathtools
+  DEPENDS LAPACK
 )
 
 include_directories(${catkin_INCLUDE_DIRS})
 
-# Search for dependencies.
-SEARCH_FOR_BOOST()
-SEARCH_FOR_LAPACK()
 
 # Search for the underlying small matrices library.
 SET(SMALLMATRIXLIB_FOUND 0)
