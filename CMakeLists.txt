@@ -31,8 +31,8 @@ SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-mal")
 SETUP_PROJECT()
 
 # Search for dependencies.
-SEARCH_FOR_BOOST()
-SEARCH_FOR_LAPACK()
+#SEARCH_FOR_BOOST()
+#SEARCH_FOR_LAPACK()
 
 catkin_package(
   INCLUDE_DIRS include
