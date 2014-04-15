@@ -16,6 +16,7 @@
 
 # Requires at least CMake 2.6 to configure the package.
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
+project(jrl-mal)
 
 find_package(catkin REQUIRED COMPONENTS sot_cmake jrl-mathtools)
 
@@ -24,7 +25,6 @@ INCLUDE(${SOT_CMAKE_DIR}/boost.cmake)
 INCLUDE(${SOT_CMAKE_DIR}/lapack.cmake)
 INCLUDE(${SOT_CMAKE_DIR}/cpack.cmake)
 
-SET(PROJECT_NAME jrl-mal)
 SET(PROJECT_DESCRIPTION "JRL matrix abstract layer")
 SET(PROJECT_URL "http://github.com/jrl-umi3218/jrl-mal")
 
